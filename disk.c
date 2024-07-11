@@ -39,7 +39,7 @@ void scan(int initial,int n,int req[],int track,int move){
         }
         // If the head is not already at the end, move to the end
         if (index != 0){
-            seek += abs(track - 1 - initial);
+            seek += abs((track - 1 )- initial);
         }
         initial = track - 1;
         // Move towards the lower end of the disk
@@ -95,7 +95,7 @@ void cscan(int initial,int n,int req[],int track,int move){
                 initial=req[i];
             }
             //  last movement for max size
-            seek+=abs(track-req[i-1]-1);
+            seek+=abs((track-1)-initial);
             /*movement max to min disk */
             seek+=abs(track-1-0);
             initial=0;
@@ -115,7 +115,7 @@ void cscan(int initial,int n,int req[],int track,int move){
                 initial=req[i];
             }
             //  last movement for min size
-            seek+=abs(req[i+1]-0);
+            seek+=abs(initial-0);
             /*movement min to max disk */
             seek+=abs(track-1-0);
             initial =track-1;
